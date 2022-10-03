@@ -37,8 +37,7 @@ function operate(operation, num1, num2) {
 // same display value is shown as when any other operator is pressed (the 
 // cumulative value so far)
 
-// So, have to store: firstOperand
-// secondOperand
+// DONE So, have to store: firstOperand and secondOperand
 
 let firstOperand = 0;
 
@@ -57,9 +56,10 @@ digitButtons.forEach((button) => {
     });
 });
 
-// 1. Everytime an operator is pressed, must show firstOperand, no matter what the 
-// operator is.
-// 2. However, must also trigger the operation on firstOperand and secondOperand.
+// 1. DONE Every time an operator is pressed, must show firstOperand, no matter 
+// what the operator is.
+// 2. However, must also trigger the operation on firstOperand and 
+// secondOperand.
 
 const operatorButtons = document.querySelectorAll('.operator');
 
