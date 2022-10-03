@@ -42,7 +42,7 @@ function operate(operation, num1, num2) {
 
 let firstOperand = 0;
 
-const display = document.querySelector('#display')
+const display = document.querySelector('#display');
 let secondOperand = 0;
 
 const digitButtons = document.querySelectorAll('.digit');
