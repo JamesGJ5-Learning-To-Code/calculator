@@ -49,10 +49,10 @@ function operate(operation, num1, num2) {
 // Display value (reset this to 0 everytime an operator is pressed, but don't show it, 
 // unless pressing the clear button)
 
-// let cumulativeResult = 0;
+let firstOperand = 0;
 
 const display = document.querySelector('#display')
-let displayValue = 0;
+let secondOperand = 0;
 
 const digitButtons = document.querySelectorAll('.digit');
 
@@ -61,8 +61,8 @@ digitButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
         const digit = +button['id'];
 
-        displayValue *= 10;
-        displayValue += digit;
-        // console.log(displayValue);
+        secondOperand *= 10;
+        secondOperand += digit;
+        console.log(secondOperand);
     });
 });
