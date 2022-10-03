@@ -14,10 +14,6 @@ function divide(num1, num2) {
     return multiply(num1, 1 / num2);
 };
 
-function operate(operation, num1, num2) {
-    return operation(num1, num2);
-};
-
 // Create the functions that populate the display when you click the number buttons 
 // Should be storing the 'display value' in a variable somewhere for use in next 
 // operation
@@ -69,12 +65,40 @@ digitButtons.forEach((button) => {
 // pressed, because then we will know the secondOperand has been typed in full.
 // - We would have to initialise this as something, so that the first operator 
 // clicked could follow this rule too.
+// - Since firstOperand is 0, we can just add firstOperand to secondOperand the 
+// first time we click an operator button. If the first button clicked is an 
+// operator, secondOperand will also be 0, so 0 will be added to 0 and firstOperand 
+// made 0, so no big deal; if we turn on calculator and type numbers (making 
+// secondOperand nonzero) then press an operator, 0 will be added to secondOperand 
+// and secondOperand made the result, so no big deal.
+// - Will have to perform this logic before displaying text content.
+// - Will have to reset secondOperand to 0.
 
 const operatorButtons = document.querySelectorAll('.operator');
+let nextOperation = add;
 
 operatorButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
+        
+        firstOperand = nextOperation(firstOperand, secondOperand);
+        secondOperand = 0;
+
         display.textContent = firstOperand;
+
+        switch(button['id']) {
+            case "add":
+                nextOperation = add;
+                break;
+            case "subtract":
+                nextOperation = subtract;
+                break;
+            case "multiply":
+                nextOperation = multiply;
+                break;
+            case "divide":
+                nextOperation = divide;
+                break;
+        };
     });
 });
