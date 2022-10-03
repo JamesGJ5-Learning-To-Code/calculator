@@ -38,6 +38,7 @@ function operate(operation, num1, num2) {
 // cumulative value so far)
 
 // DONE So, have to store: firstOperand and secondOperand
+// Must also store the secondOperand as it is being typed out
 
 let firstOperand = 0;
 
@@ -53,6 +54,8 @@ digitButtons.forEach((button) => {
 
         secondOperand *= 10;
         secondOperand += digit;
+
+        display.textContent = secondOperand;
     });
 });
 
