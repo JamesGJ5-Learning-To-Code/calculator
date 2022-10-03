@@ -60,6 +60,12 @@ digitButtons.forEach((button) => {
 // what the operator is.
 // 2. However, must also trigger the operation on firstOperand and 
 // secondOperand.
+// - So, we would have to click an operator button but delay its operation, because 
+// we would then have to enter a secondOperand; perhaps the operation could be 
+// done the next time any operator (equals, multiply, divide, plus or -) is 
+// pressed, because then we will know the secondOperand has been typed in full.
+// - We would have to initialise this as something, so that the first operator 
+// clicked could follow this rule too.
 
 const operatorButtons = document.querySelectorAll('.operator');
 
