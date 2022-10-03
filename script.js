@@ -63,6 +63,5 @@ digitButtons.forEach((button) => {
 
         secondOperand *= 10;
         secondOperand += digit;
-        console.log(secondOperand);
     });
 });
