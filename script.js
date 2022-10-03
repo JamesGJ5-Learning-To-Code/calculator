@@ -23,13 +23,13 @@ function operate(operation, num1, num2) {
 // operation
 // Use https://mrbuddh4.github.io/calculator/ as an example of the behaviour
 
-// 1. Create a variable called 'displayValue'
-// 2. Going to have to listen to see when a digit button is pressed
-// 3. When a new digit button is pressed, assign it to displayValue
-// 4. Put displayValue on the screen (or directly put the digit on the screen)
+// 1. DONE Create a variable called 'displayValue'
+// 2. DONE Going to have to listen to see when a digit button is pressed
+// 3. DONE When a new digit button is pressed, assign it to displayValue
+// 4. DONE Put displayValue on the screen (or directly put the digit on the screen)
 
 const display = document.querySelector('#display')
-let displayValue;
+let displayValue = 0;
 
 const digitButtons = document.querySelectorAll('.digit');
 
