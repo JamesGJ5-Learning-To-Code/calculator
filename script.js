@@ -56,3 +56,7 @@ digitButtons.forEach((button) => {
         secondOperand += digit;
     });
 });
+
+// 1. Everytime an operator is pressed, must show firstOperand, no matter what the 
+// operator is.
+// 2. However, must also trigger the operation on firstOperand and secondOperand.
