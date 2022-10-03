@@ -60,3 +60,12 @@ digitButtons.forEach((button) => {
 // 1. Everytime an operator is pressed, must show firstOperand, no matter what the 
 // operator is.
 // 2. However, must also trigger the operation on firstOperand and secondOperand.
+
+const operatorButtons = document.querySelectorAll('.operator');
+
+operatorButtons.forEach((button) => {
+
+    button.addEventListener('click', (e) => {
+        display.textContent = firstOperand;
+    });
+});
