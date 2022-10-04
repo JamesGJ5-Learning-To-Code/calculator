@@ -113,6 +113,13 @@ const operatorButtons = document.querySelectorAll('.operator');
 // });
 
 
+const equalsButton = document.querySelector('#equals');
+
+// equalsButton.addEventListener('click', (e) => {
+
+// });
+
+
 const clearButton = document.querySelector('#clear');
 
 // clearButton.addEventListener('click', (e) => {
