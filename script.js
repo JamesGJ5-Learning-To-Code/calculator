@@ -216,11 +216,11 @@ operatorButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
 
+        decimalButton.classList.remove('active');
+
         if (secondOperand === null) {
             return;
         };
-
-        decimalButton.classList.remove('active');
 
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
@@ -254,11 +254,11 @@ let justPressedEquals = false;
 
 equalsButton.addEventListener('click', (e) => {
 
+    decimalButton.classList.remove('active');
+
     if (secondOperand === null) {
         return;
     };
-
-    decimalButton.classList.remove('active');
 
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
