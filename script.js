@@ -150,6 +150,11 @@ function divide(num1, num2) {
 // b) DONE Make it so that, when you click the decimal button, nothing happens if it 
 // has the class "active". Otherwise, give it a class of "active".
 
+// c) If the decimal button is inactive and we click it, it is made active but we 
+// want to augment secondOperand first.
+
+// d) Make sure what's in the display is also augmented.
+
 
 let firstOperand = 0;
 let secondOperand = null;
