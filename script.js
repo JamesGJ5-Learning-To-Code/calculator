@@ -189,6 +189,10 @@ digitButtons.forEach((button) => {
         secondOperand *= 10;
         secondOperand += digit;
 
+        if (decimalButton.classList.contains('active')) {
+            numberOfDecimalDigits += 1;
+        };
+
         displayDiv.textContent = secondOperand;
     });
 });
