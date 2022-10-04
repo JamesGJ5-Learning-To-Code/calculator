@@ -128,7 +128,7 @@ function divide(num1, num2) {
 // normal. We'd have to: 
 //  i) DONE Create the variable (justPressedEquals) telling us if equals has just been 
 //  pressed
-//  ii) Create a 'clear' function (resetting firstOperand, secondOperand, 
+//  ii) DONE Create a 'clear' function (resetting firstOperand, secondOperand, 
 //  queuedOperator and justPressedEquals and displayDiv)
 //  iii) Add the aforementioned logic to the digitButtons event listener.
 
@@ -217,6 +217,13 @@ equalsButton.addEventListener('click', (e) => {
 
 const clearButton = document.querySelector('#clear');
 
-// clearButton.addEventListener('click', (e) => {
+clearButton.addEventListener('click', (e) => {
 
-// });
+    firstOperand = 0;
+    secondOperand = null;
+    displayDiv.textContent = 0;
+
+    queuedOperator = add;
+    justPressedEquals = false;
+
+});
