@@ -80,7 +80,7 @@ let nextOperation = add;
 operatorButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
-        
+
         firstOperand = nextOperation(firstOperand, secondOperand);
         secondOperand = 0;
 
@@ -99,6 +99,18 @@ operatorButtons.forEach((button) => {
             case "divide":
                 nextOperation = divide;
                 break;
+            case "operate":
+                // Next paths:
+                // 1. You want to type in a new number and start afresh
+                //  - For this to work, all you have to do is make nextOperation 
+                //   === add and make firstOperand 0 (secondOperand is already 0)
+                // 2. You want to undertake another operation on what is currently 
+                // being displayed
+                //  - For this to work, must leave firstOperand as it is and make 
+                //  sure that the next operator pressing doesn't trigger an operation 
+                //  between firstOperand and secondOperand
+                // Must also think in general about what happens when you just 
+                // keep pressing an operator
         };
     });
 });
