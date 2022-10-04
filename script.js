@@ -179,6 +179,9 @@ digitButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('#decimal');
 
+// decimalButton.addEventListener('click', (e) => {
+
+// });
 
 
 let queuedOperator = add;
