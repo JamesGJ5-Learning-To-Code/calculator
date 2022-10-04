@@ -103,11 +103,11 @@ function divide(num1, num2) {
 // 4. After the assurances made above, it seems we must now consider what happens 
 // when you press an operator or equals and the secondOperand is NOT null.
 // a) DONE First, do this for the non-equals operators. Will probably initialise 
-// nextOperator as addition (the name of the function), so that when another operator 
+// queuedOperator as addition (the name of the function), so that when another operator 
 // is pressed and secondOperand has its first number since the calculator is 
 // turned on, it simply adds this to firstOperand (0) and makes the firstOperand the 
 // result and also displays the result. The operator just pressed then has its function assigned to 
-// nextOperator for subsequent operations, and secondOperand is made null so that further 
+// queuedOperator for subsequent operations, and secondOperand is made null so that further 
 // operator (and equals) button clicks without typing in a number first do nothing.
 // b) Make sure things are ok when you press the equals button.
 
@@ -138,7 +138,7 @@ digitButtons.forEach((button) => {
 });
 
 
-let nextOperator = add;
+let queuedOperator = add;
 
 const operatorButtons = document.querySelectorAll('.operator');
 
@@ -150,7 +150,7 @@ operatorButtons.forEach((button) => {
             return;
         };
 
-        previousOperatorResult = nextOperator(firstOperand, secondOperand);
+        previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
 
         firstOperand = previousOperatorResult;
@@ -158,16 +158,16 @@ operatorButtons.forEach((button) => {
 
         switch (button['id']) {
             case "add":
-                nextOperator = add;
+                queuedOperator = add;
                 break;
             case "subtract":
-                nextOperator = subtract;
+                queuedOperator = subtract;
                 break;
             case "multiply":
-                nextOperator = multiply;
+                queuedOperator = multiply;
                 break;
             case "divide":
-                nextOperator = divide;
+                queuedOperator = divide;
                 break;
         };
 
