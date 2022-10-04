@@ -109,10 +109,14 @@ function divide(num1, num2) {
 // result and also displays the result. The operator just pressed then has its function assigned to 
 // queuedOperator for subsequent operations, and secondOperand is made null so that further 
 // operator (and equals) button clicks without typing in a number first do nothing.
-// b) Make sure things are ok when you press the equals button:
-//  i) So, when you press the equals button, you simply want to implement 
+// b) Make sure things are ok when you press the equals button and then an operator:
+//  i) DONE So, when you press the equals button, you simply want to implement 
 // queuedOperator on firstOperand and secondOperand if secondOperand is not null.
-//  ii) You also want to display the result on the screen as usual.
+//  ii) DONE You also want to display the result on the screen as usual.
+//  iii) DONE However, make sure you don't change firstOperand and secondOperand, so that 
+//  if you press another operator, then the same operation occurs, the same result 
+//  is shown and you can type new numbers as usual.
+
 
 
 let firstOperand = 0;
@@ -185,6 +189,9 @@ equalsButton.addEventListener('click', (e) => {
     if (secondOperand === null) {
         return;
     };
+
+    previousOperatorResult = queuedOperator(firstOperand, secondOperand);
+    displayDiv.textContent = previousOperatorResult;
 
 });
 
