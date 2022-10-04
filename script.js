@@ -207,6 +207,8 @@ equalsButton.addEventListener('click', (e) => {
         return;
     };
 
+    // TODO: refactor this code and the same code that appears in the 
+    // operatorButtons event listener
     previousOperatorResult = queuedOperator(firstOperand, secondOperand);
     displayDiv.textContent = previousOperatorResult;
 
