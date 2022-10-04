@@ -98,7 +98,7 @@ function divide(num1, num2) {
 // initialised as null.
 // b) DONE Then, when you type in a number, replace secondOperand with 
 // 0 if it is null and start updating it and populating the display with it. 
-// c) If you press an operator or equals and secondOperand is null, do nothing.
+// c) DONE If you press an operator or equals and secondOperand is null, do nothing.
 
 let firstOperand = 0;
 let secondOperand = null;
@@ -128,19 +128,27 @@ digitButtons.forEach((button) => {
 
 const operatorButtons = document.querySelectorAll('.operator');
 
-// operatorButtons.forEach((button) => {
+operatorButtons.forEach((button) => {
 
-//     button.addEventListener('click', (e) => {
+    button.addEventListener('click', (e) => {
 
-//     });
-// });
+        if (secondOperand === null) {
+            return;
+        };
+
+    });
+});
 
 
 const equalsButton = document.querySelector('#equals');
 
-// equalsButton.addEventListener('click', (e) => {
+equalsButton.addEventListener('click', (e) => {
 
-// });
+    if (secondOperand === null) {
+        return;
+    };
+
+});
 
 
 const clearButton = document.querySelector('#clear');
