@@ -109,6 +109,7 @@ function divide(num1, num2) {
 // result and also displays the result. The operator just pressed then has its function assigned to 
 // queuedOperator for subsequent operations, and secondOperand is made null so that further 
 // operator (and equals) button clicks without typing in a number first do nothing.
+
 // b) Make sure things are ok when you press the equals button and then an operator:
 //  i) DONE So, when you press the equals button, you simply want to implement 
 // queuedOperator on firstOperand and secondOperand if secondOperand is not null.
@@ -116,6 +117,16 @@ function divide(num1, num2) {
 //  iii) DONE However, make sure you don't change firstOperand and secondOperand, so that 
 //  if you press another operator, then the same operation occurs, the same result 
 //  is shown and you can type new numbers as usual.
+
+// c) Make sure things are ok when you press the equals button and then start 
+// typing another number from scratch. Current issue is that, when you press equals 
+// and start typing out another number, secondOperand is not null, so secondOperand 
+// just gets modified as it is. One way we could prevent this is by adding a 
+// variable to tell us whether or not = has just been pressed, so that when we 
+// type a new number in, we can check if it has been pressed. If it has, call 
+// clear to reset things before going on to continue typing the number in as 
+// normal. We'd have to create a 'clear' function then add the aforementioned 
+// logic to the digitButtons event listener.
 
 
 
