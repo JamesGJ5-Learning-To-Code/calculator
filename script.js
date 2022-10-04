@@ -130,7 +130,7 @@ function divide(num1, num2) {
 //  pressed
 //  ii) DONE Create a 'clear' function (resetting firstOperand, secondOperand, 
 //  queuedOperator and justPressedEquals and displayDiv)
-//  iii) Add the aforementioned logic to the digitButtons event listener.
+//  iii) DONE Add the aforementioned logic to the digitButtons event listener.
 
 
 let firstOperand = 0;
