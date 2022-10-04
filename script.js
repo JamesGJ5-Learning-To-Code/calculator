@@ -231,6 +231,7 @@ operatorButtons.forEach((button) => {
 
         if (numberOfDecimalDigits > 0) {
             secondOperand /= (10 ** numberOfDecimalDigits);
+            numberOfDecimalDigits = 0;
         };
 
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
