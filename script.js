@@ -129,7 +129,7 @@ function divide(num1, num2) {
 //  if you press another operator, then the same operation occurs, the same result 
 //  is shown and you can type new numbers as usual.
 
-// c) Make sure things are ok when you press the equals button and then start 
+// c) DONE Make sure things are ok when you press the equals button and then start 
 // typing another number from scratch. Current issue is that, when you press equals 
 // and start typing out another number, secondOperand is not null, so secondOperand 
 // just gets modified as it is. One way we could prevent this is by adding a 
