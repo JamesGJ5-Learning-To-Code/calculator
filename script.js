@@ -88,12 +88,33 @@ function divide(num1, num2) {
 // Step-by-step plan:
 
 // 1. DONE Load all buttons and the display div onto the page
-// 2. Create event listener skeletons for each of the button types
+// 2. DONE Create event listener skeletons for each of the button types
 
 const displayDiv = document.querySelector('#display');
 
+
 const digitButtons = document.querySelectorAll('.digit');
+
+// digitButtons.forEach((button) => {
+
+//     button.addEventListener('click', (e) => {
+
+//     });
+// });
+
 
 const operatorButtons = document.querySelectorAll('.operator');
 
+// operatorButtons.forEach((button) => {
+
+//     button.addEventListener('click', (e) => {
+
+//     });
+// });
+
+
 const clearButton = document.querySelector('#clear');
+
+// clearButton.addEventListener('click', (e) => {
+
+// });
