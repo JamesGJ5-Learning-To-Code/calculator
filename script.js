@@ -94,9 +94,9 @@ function divide(num1, num2) {
 // 3. Start with what happens when you have just turned the calculator on and you: 
 //  -> Click digit buttons (digits should populate the display)
 //  -> Click an operator button or equals button (nothing should happen)
-// a) In either case, will have to have firstOperand initialised as 0 and secondOperand 
+// a) DONE In either case, will have to have firstOperand initialised as 0 and secondOperand 
 // initialised as null.
-// b) Then, when you type in a number, replace secondOperand with 
+// b) DONE Then, when you type in a number, replace secondOperand with 
 // 0 if it is null and start updating it and populating the display with it. 
 // c) If you press an operator or equals and secondOperand is null, do nothing.
 
@@ -108,12 +108,22 @@ const displayDiv = document.querySelector('#display');
 
 const digitButtons = document.querySelectorAll('.digit');
 
-// digitButtons.forEach((button) => {
+digitButtons.forEach((button) => {
 
-//     button.addEventListener('click', (e) => {
+    button.addEventListener('click', (e) => {
 
-//     });
-// });
+        digit = parseInt(button['id']);
+
+        if (secondOperand === null) {
+            secondOperand = 0;
+        };
+
+        secondOperand *= 10;
+        secondOperand += digit;
+
+        displayDiv.textContent = secondOperand;
+    });
+});
 
 
 const operatorButtons = document.querySelectorAll('.operator');
