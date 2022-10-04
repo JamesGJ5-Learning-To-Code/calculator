@@ -219,7 +219,7 @@ equalsButton.addEventListener('click', (e) => {
 
 const clearButton = document.querySelector('#clear');
 
-clearButton.addEventListener('click', (e) => {
+function reset() {
 
     firstOperand = 0;
     secondOperand = null;
@@ -227,5 +227,11 @@ clearButton.addEventListener('click', (e) => {
 
     queuedOperator = add;
     justPressedEquals = false;
+
+};
+
+clearButton.addEventListener('click', (e) => {
+
+    reset();
 
 });
