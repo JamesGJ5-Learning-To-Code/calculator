@@ -110,7 +110,7 @@ function divide(num1, num2) {
 // queuedOperator for subsequent operations, and secondOperand is made null so that further 
 // operator (and equals) button clicks without typing in a number first do nothing.
 
-// b) Make sure things are ok when you press the equals button and then an operator:
+// b) DONE Make sure things are ok when you press the equals button and then an operator:
 //  i) DONE So, when you press the equals button, you simply want to implement 
 // queuedOperator on firstOperand and secondOperand if secondOperand is not null.
 //  ii) DONE You also want to display the result on the screen as usual.
@@ -125,9 +125,12 @@ function divide(num1, num2) {
 // variable to tell us whether or not = has just been pressed, so that when we 
 // type a new number in, we can check if it has been pressed. If it has, call 
 // clear to reset things before going on to continue typing the number in as 
-// normal. We'd have to create a 'clear' function then add the aforementioned 
-// logic to the digitButtons event listener.
-
+// normal. We'd have to: 
+//  i) Create the variable (justPressedEquals) telling us if equals has just been 
+//  pressed
+//  ii) Create a 'clear' function (resetting firstOperand, secondOperand, 
+//  queuedOperator and justPressedEquals and displayDiv)
+//  iii) Add the aforementioned logic to the digitButtons event listener.
 
 
 let firstOperand = 0;
