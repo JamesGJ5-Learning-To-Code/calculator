@@ -258,6 +258,8 @@ equalsButton.addEventListener('click', (e) => {
         return;
     };
 
+    decimalButton.classList.remove('active');
+
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
     previousOperatorResult = queuedOperator(firstOperand, secondOperand);
