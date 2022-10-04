@@ -177,6 +177,10 @@ digitButtons.forEach((button) => {
 });
 
 
+const decimalButton = document.querySelector('#decimal');
+
+
+
 let queuedOperator = add;
 
 const operatorButtons = document.querySelectorAll('.operator');
