@@ -143,6 +143,9 @@ function divide(num1, num2) {
 //  queuedOperator and justPressedEquals and displayDiv)
 //  iii) DONE Add the aforementioned logic to the digitButtons event listener.
 
+// 5. Time for decimal stuff.
+// a) DONE Make a decimal button in index.html
+
 
 let firstOperand = 0;
 let secondOperand = null;
