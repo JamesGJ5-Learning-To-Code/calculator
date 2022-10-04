@@ -150,7 +150,10 @@ function divide(num1, num2) {
 // b) DONE Make it so that, when you click the decimal button, nothing happens if it 
 // has the class "active". Otherwise, give it a class of "active".
 
-// d) If the decimal button is inactive and we click it, it is made active but we 
+// d) When you press an operator or equals sign or clear button, make it so that 
+// the decimal button becomes inactive.
+
+// e) If the decimal button is inactive and we click it, it is made active but we 
 // want to augment secondOperand first. Probably going to have to do this in the 
 // digit button click event listener. In there, if decimal button is active, 
 // want to multiply by 10 and add digit as normal, but later, want to divide 
@@ -158,7 +161,7 @@ function divide(num1, num2) {
 // result of equals. Increase number of decimal places by 1 whenever a digit is 
 // added like this while active.
 
-// e) Make sure what's in the display is also augmented.
+// f) Make sure what's in the display is also augmented.
 
 
 let firstOperand = 0;
