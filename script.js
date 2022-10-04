@@ -88,7 +88,17 @@ function divide(num1, num2) {
 // Step-by-step plan:
 
 // 1. DONE Load all buttons and the display div onto the page
+
 // 2. DONE Create event listener skeletons for each of the button types
+
+// 3. Start with what happens when you have just turned the calculator on and you: 
+//  -> Click digit buttons (digits should populate the display)
+//  -> Click an operator button (nothing should happen)
+// a) In either case, will have to have firstOperand initialised as 0 and secondOperand 
+// initialised as null.
+// b) Then, when you type in a number, replace secondOperand with 
+// 0 if it is null and start updating it and populating the display with it. 
+// c) If you press an operator and secondOperand is null, do nothing.
 
 const displayDiv = document.querySelector('#display');
 
