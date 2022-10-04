@@ -198,6 +198,9 @@ operatorButtons.forEach((button) => {
 
 const equalsButton = document.querySelector('#equals');
 
+// Specifically, "just pressed equals while secondOperand not null"
+let justPressedEquals = false;
+
 equalsButton.addEventListener('click', (e) => {
 
     if (secondOperand === null) {
@@ -206,6 +209,8 @@ equalsButton.addEventListener('click', (e) => {
 
     previousOperatorResult = queuedOperator(firstOperand, secondOperand);
     displayDiv.textContent = previousOperatorResult;
+
+    justPressedEquals = true;
 
 });
 
