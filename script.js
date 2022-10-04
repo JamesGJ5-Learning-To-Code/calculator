@@ -73,6 +73,7 @@ function divide(num1, num2) {
 // to start afresh
 // ---# Might have to reset firstOperand and secondOperand to null, and displayValue 
 // to 0
+// ---# Maybe write this into the divide() function definition itself
 
 // -- Deliver a snarky error message if the user tries to divide by 0, and don't 
 // let it crash the calculator
@@ -82,3 +83,17 @@ function divide(num1, num2) {
 // we are fast-tracked to clear and then the button operates as normal.
 
 // TODO: See TOP's 'Extra Credit' section
+
+
+// Step-by-step plan:
+
+// 1. DONE Load all buttons and the display div onto the page
+// 2. Create event listener skeletons for each of the button types
+
+const displayDiv = document.querySelector('#display');
+
+const digitButtons = document.querySelectorAll('.digit');
+
+const operatorButtons = document.querySelectorAll('.operator');
+
+const clearButton = document.querySelector('#clear');
