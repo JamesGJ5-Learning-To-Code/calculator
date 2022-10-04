@@ -82,7 +82,18 @@ function divide(num1, num2) {
 // remains for a few seconds. If another button is pressed in the time it remains, 
 // we are fast-tracked to clear and then the button operates as normal.
 
-// TODO: See TOP's 'Extra Credit' section
+// Extra Credit:
+
+// - Allow pressing a . button to enable the input of decimals, but don't allow 
+// them to press it again--if there's a decimal button in the display, make it 
+// so that the decimal button is not pressable.
+
+// - Practise your CSS skills, at least make the operations a different color 
+// from the keypad buttons.
+
+// - Add a "backspace" button, so the user can undo if they click the wrong number.
+
+// - Add keyboard support.
 
 
 // Step-by-step plan:
