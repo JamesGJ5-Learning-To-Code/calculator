@@ -144,7 +144,11 @@ function divide(num1, num2) {
 //  iii) DONE Add the aforementioned logic to the digitButtons event listener.
 
 // 5. Time for decimal stuff.
+
 // a) DONE Make a decimal button in index.html
+
+// b) DONE Make it so that, when you click the decimal button, nothing happens if it 
+// has the class "active". Otherwise, give it a class of "active".
 
 
 let firstOperand = 0;
@@ -179,9 +183,16 @@ digitButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('#decimal');
 
-// decimalButton.addEventListener('click', (e) => {
+decimalButton.addEventListener('click', (e) => {
 
-// });
+    if (decimalButton.classList.contains('active')) {
+        console.log('This thing is active');
+        return;
+    };
+
+    decimalButton.classList.add('active');
+
+});
 
 
 let queuedOperator = add;
