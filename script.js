@@ -145,6 +145,10 @@ digitButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
 
+        if (justPressedEquals === true) {
+            reset();
+        };
+
         digit = parseInt(button['id']);
 
         if (secondOperand === null) {
