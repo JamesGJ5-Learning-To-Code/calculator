@@ -229,6 +229,10 @@ operatorButtons.forEach((button) => {
             return;
         };
 
+        if (numberOfDecimalDigits > 0) {
+            secondOperand /= (10 ** numberOfDecimalDigits);
+        };
+
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
 
