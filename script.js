@@ -207,7 +207,6 @@ let numberOfDecimalDigits = 0;
 decimalButton.addEventListener('click', (e) => {
 
     if (decimalButton.classList.contains('active')) {
-        console.log('This thing is active');
         return;
     };
 
