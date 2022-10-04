@@ -109,7 +109,10 @@ function divide(num1, num2) {
 // result and also displays the result. The operator just pressed then has its function assigned to 
 // queuedOperator for subsequent operations, and secondOperand is made null so that further 
 // operator (and equals) button clicks without typing in a number first do nothing.
-// b) Make sure things are ok when you press the equals button.
+// b) Make sure things are ok when you press the equals button:
+//  i) So, when you press the equals button, you simply want to implement 
+// queuedOperator on firstOperand and secondOperand if secondOperand is not null.
+//  ii) You also want to display the result on the screen as usual.
 
 
 let firstOperand = 0;
