@@ -196,6 +196,10 @@ digitButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('#decimal');
 
+// This will be incremented in the event listener for digit clicks, and made 0 
+// again when an operator, equals or clear is pressed.
+let numberOfDecimalDigits = 0;
+
 decimalButton.addEventListener('click', (e) => {
 
     if (decimalButton.classList.contains('active')) {
