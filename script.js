@@ -295,6 +295,8 @@ function reset() {
 
     decimalButton.classList.remove('active');
 
+    numberOfDecimalDigits = 0;
+
 };
 
 clearButton.addEventListener('click', (e) => {
