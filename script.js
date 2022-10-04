@@ -126,7 +126,7 @@ function divide(num1, num2) {
 // type a new number in, we can check if it has been pressed. If it has, call 
 // clear to reset things before going on to continue typing the number in as 
 // normal. We'd have to: 
-//  i) Create the variable (justPressedEquals) telling us if equals has just been 
+//  i) DONE Create the variable (justPressedEquals) telling us if equals has just been 
 //  pressed
 //  ii) Create a 'clear' function (resetting firstOperand, secondOperand, 
 //  queuedOperator and justPressedEquals and displayDiv)
