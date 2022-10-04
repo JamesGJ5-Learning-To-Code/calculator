@@ -220,6 +220,8 @@ operatorButtons.forEach((button) => {
             return;
         };
 
+        decimalButton.classList.remove('active');
+
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
 
