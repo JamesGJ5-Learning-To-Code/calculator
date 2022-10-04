@@ -100,6 +100,18 @@ function divide(num1, num2) {
 // 0 if it is null and start updating it and populating the display with it. 
 // c) DONE If you press an operator or equals and secondOperand is null, do nothing.
 
+// 4. After the assurances made above, it seems we must now consider what happens 
+// when you press an operator or equals and the secondOperand is NOT null.
+// a) DONE First, do this for the non-equals operators. Will probably initialise 
+// nextOperator as addition (the name of the function), so that when another operator 
+// is pressed and secondOperand has its first number since the calculator is 
+// turned on, it simply adds this to firstOperand (0) and makes the firstOperand the 
+// result and also displays the result. The operator just pressed then has its function assigned to 
+// nextOperator for subsequent operations, and secondOperand is made null so that further 
+// operator (and equals) button clicks without typing in a number first do nothing.
+// b) Make sure things are ok when you press the equals button.
+
+
 let firstOperand = 0;
 let secondOperand = null;
 
@@ -126,6 +138,8 @@ digitButtons.forEach((button) => {
 });
 
 
+let nextOperator = add;
+
 const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach((button) => {
@@ -134,6 +148,27 @@ operatorButtons.forEach((button) => {
 
         if (secondOperand === null) {
             return;
+        };
+
+        previousOperatorResult = nextOperator(firstOperand, secondOperand);
+        displayDiv.textContent = previousOperatorResult;
+
+        firstOperand = previousOperatorResult;
+        secondOperand = null;
+
+        switch (button['id']) {
+            case "add":
+                nextOperator = add;
+                break;
+            case "subtract":
+                nextOperator = subtract;
+                break;
+            case "multiply":
+                nextOperator = multiply;
+                break;
+            case "divide":
+                nextOperator = divide;
+                break;
         };
 
     });
