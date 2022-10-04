@@ -100,6 +100,9 @@ function divide(num1, num2) {
 // 0 if it is null and start updating it and populating the display with it. 
 // c) If you press an operator or equals and secondOperand is null, do nothing.
 
+let firstOperand = 0;
+let secondOperand = null;
+
 const displayDiv = document.querySelector('#display');
 
 
