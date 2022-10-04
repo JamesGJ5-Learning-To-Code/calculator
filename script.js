@@ -150,7 +150,7 @@ function divide(num1, num2) {
 // b) DONE Make it so that, when you click the decimal button, nothing happens if it 
 // has the class "active". Otherwise, give it a class of "active".
 
-// d) When you press an operator or equals sign or clear button, make it so that 
+// d) DONE When you press an operator or equals sign or clear button, make it so that 
 // the decimal button becomes inactive.
 
 // e) If the decimal button is inactive and we click it, it is made active but we 
@@ -280,6 +280,8 @@ function reset() {
 
     queuedOperator = add;
     justPressedEquals = false;
+
+    decimalButton.classList.remove('active');
 
 };
 
