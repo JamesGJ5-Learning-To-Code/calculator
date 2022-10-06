@@ -245,7 +245,11 @@ operatorButtons.forEach((button) => {
             numberOfDecimalDigits = 0;
         };
 
-
+        // Clicking the operator button doesn't cause the clicked operator to take 
+        // effect immediately, because the clicked operator would have to wait 
+        // for the following number to be typed in. Instead, the queued operator 
+        // (the last one clicked) is implemented between the result so far and the 
+        // last number typed in
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
 
