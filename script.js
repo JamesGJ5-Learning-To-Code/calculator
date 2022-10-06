@@ -229,6 +229,9 @@ operatorButtons.forEach((button) => {
             justPressedEquals = false;
         };
 
+        // Don't want anything to happen if you haven't typed in a new number to 
+        // perform the queued operation on (because below the queued operator will 
+        // be implemented on firstOperand and secondOperand)
         if (secondOperand === null) {
             return;
         };
