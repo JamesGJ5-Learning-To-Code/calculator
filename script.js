@@ -176,9 +176,9 @@ function divide(num1, num2) {
 
 // 6. Backspace button
 
-// a) Add a backspace button to the HTML with an ID of 'backspace'
+// a) DONE Add a backspace button to the HTML with an ID of 'backspace'
 
-// b) Backspace should only affect secondOperand. It shouldn't affect firstOperand. 
+// b) DONE Backspace should only affect secondOperand. It shouldn't affect firstOperand. 
 // When operator or equals is pressed, backspace should have no effect; when either of 
 // these is clicked successfully, secondOperand is made null, so make it so that when 
 // secondOperand is null, backspace has no effect. When secondOperand has 
