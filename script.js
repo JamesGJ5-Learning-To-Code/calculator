@@ -203,6 +203,8 @@ const decimalButton = document.querySelector('#decimal');
 
 decimalButton.addEventListener('click', (e) => {
 
+    // Don't want pressing decimalButton again to do anything until it is made 
+    // inactive
     if (decimalButton.classList.contains('active')) {
         return;
     };
