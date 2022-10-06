@@ -238,8 +238,13 @@ operatorButtons.forEach((button) => {
 
         if (numberOfDecimalDigits > 0) {
             secondOperand /= (10 ** numberOfDecimalDigits);
+
+            // numberOfDecimalDigits has taken effect on the number it is relevant 
+            // to in the operations, so can be reset for the next number that will 
+            // have decimal digits
             numberOfDecimalDigits = 0;
         };
+
 
         previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
