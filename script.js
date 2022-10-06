@@ -315,6 +315,9 @@ function reset() {
     numberOfDecimalDigits = 0;
     decimalButton.classList.remove('active');
 
+    // This is first because, when number is typed in and operator is clicked, 
+    // queued operator will simply add this secondOperand to firstOperand (0), meaning 
+    // the stored result will simply be the first number typed in
     queuedOperator = add;
 
     // Specifically, "just pressed equals while secondOperand not null"
