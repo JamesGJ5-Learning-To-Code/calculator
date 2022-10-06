@@ -163,7 +163,7 @@ function divide(num1, num2) {
 
 // f) DONE Make sure what's in the display is also augmented.
 
-// g) Make sure you have declared variables appropriately using let etc.
+// g) DONE Make sure you have declared variables appropriately using let etc.
 
 // h) Amend bug regarding changing mind about operator and this not being doable
 
