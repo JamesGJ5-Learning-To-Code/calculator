@@ -174,6 +174,17 @@ function divide(num1, num2) {
 // reset(), however, justPressedOperator should be made false if it is true.
 
 
+// 6. Backspace button
+
+// a) Add a backspace button to the HTML with an ID of 'backspace'
+
+// b) Backspace should only affect secondOperand. It shouldn't affect firstOperand. 
+// When operator or equals is pressed, backspace should have no effect; when either of 
+// these is clicked successfully, secondOperand is made null, so make it so that when 
+// secondOperand is null, backspace has no effect. When secondOperand has 
+// only one digit, backspace should make it null and not let it show up on the display.
+
+
 const displayDiv = document.querySelector('#display');
 
 
