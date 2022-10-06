@@ -293,13 +293,10 @@ function reset() {
     firstOperand = 0;
     secondOperand = null;
     displayDiv.textContent = 0;
-
     queuedOperator = add;
     justPressedEquals = false;
-
-    decimalButton.classList.remove('active');
-
     numberOfDecimalDigits = 0;
+    decimalButton.classList.remove('active');
 
 };
 
