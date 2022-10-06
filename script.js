@@ -287,15 +287,16 @@ function reset() {
     firstOperand = 0;
     secondOperand = null;
     displayDiv.textContent = 0;
-    queuedOperator = add;
-
-    // Specifically, "just pressed equals while secondOperand not null"
-    justPressedEquals = false;
 
     // This will be incremented in the event listener for digit clicks, and made 0 
     // again when an operator, equals or clear is pressed.
     numberOfDecimalDigits = 0;
     decimalButton.classList.remove('active');
+
+    queuedOperator = add;
+
+    // Specifically, "just pressed equals while secondOperand not null"
+    justPressedEquals = false;
 
 };
 
