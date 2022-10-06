@@ -278,7 +278,7 @@ equalsButton.addEventListener('click', (e) => {
 
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
-    previousOperatorResult = queuedOperator(firstOperand, secondOperand);
+    previousOperatorResult = queuedOperator(firstOperand, secondOperand / (10 ** numberOfDecimalDigits));
     displayDiv.textContent = previousOperatorResult;
 
     justPressedEquals = true;
