@@ -385,7 +385,7 @@ function reset() {
 
     firstOperand = 0;
     secondOperand = null;
-    displayDiv.textContent = 0;
+    displayDiv.textContent = '_';
 
     decimalButton.classList.remove('active');
 
