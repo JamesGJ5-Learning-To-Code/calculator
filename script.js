@@ -236,7 +236,7 @@ digitButtons.forEach((button) => {
         };
 
     });
-    
+
 });
 
 
@@ -255,33 +255,47 @@ decimalButton.addEventListener('click', (e) => {
 });
 
 
-// const backspaceButton = document.querySelector('#backspace');
+const backspaceButton = document.querySelector('#backspace');
 
-// backspaceButton.addEventListener('click', (e) => {
+backspaceButton.addEventListener('click', (e) => {
 
-//     if (secondOperand === null) {
-//         return;
-//     };
+    if (secondOperand === null) {
+        return;
+    };
 
-//     if (decimalButton.classList.contains('active')) {
-//         let numberOfDecimalDigits = countDecimals(secondOperand);
-//         if (numberOfDecimalDigits === 0) {
-//             decimalButton.classList.remove('active');
-//         } else {
-//             secondOperand * 10 ** (numberOfDecimalDigits - 1)
-//         };
-//     };
+    if (decimalButton.classList.contains('active')) {
 
-    // secondOperand = Math.floor(secondOperand / 10)
+        let string = displayDiv.textContent;
 
-    // if (secondOperand === 0) {
-    //     secondOperand = null;
-    //     displayDiv.textContent = '_';
-    // } else {
-    //     displayDiv.textContent = secondOperand;
-    // };
+        if (!string.includes('.')) {
+            decimalButton.classList.remove('active');
 
-// });
+        } else if (string.charAt(string.length - 1) === '.') {
+            string = string.slice(0, -1);
+            decimalButton.classList.remove('active')
+
+        } else {
+            string = string.slice(0, -1);
+        };
+
+        displayDiv.textContent = string;
+
+        secondOperand = +string;
+
+    } else {
+
+        secondOperand = Math.floor(secondOperand / 10);
+
+        if (secondOperand === 0) {
+            displayDiv.textContent = '_';
+
+        } else {
+            displayDiv.textContent = secondOperand;
+        };
+
+    };
+
+});
 
 
 const operatorButtons = document.querySelectorAll('.operator');
