@@ -183,9 +183,7 @@ digitButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
 
-        if (justPressedEquals === true) {
-            reset();
-        };
+        if (justPressedEquals === true) {reset();};
 
         justPressedOperator = false;
 
@@ -236,18 +234,14 @@ operatorButtons.forEach((button) => {
         // If justPressedEquals is true and you leave it true, then the next time 
         // you press a number after pressing this operator, everything is reset instead 
         // of contributing the next number to previous operation/result
-        if (justPressedEquals === true) {
-            justPressedEquals = false;
-        };
+        justPressedEquals = false;
 
         if (justPressedOperator === false) {
 
             // Don't want anything to perform a new computation if you haven't typed in a new number to 
             // perform the queued operation on (because below the queued operator will 
             // be implemented on firstOperand and secondOperand)
-            if (secondOperand === null) {
-                return;
-            };
+            if (secondOperand === null) return;
 
             // Clicking the operator button doesn't cause the clicked operator to take 
             // effect immediately, because the clicked operator would have to wait 
@@ -296,9 +290,7 @@ equalsButton.addEventListener('click', (e) => {
     // So that equals takes no effect if the last thing clicked was an operator 
     // (because it would try to perform the queuedOperator on a null value) 
     // or if nothing has been typed in yet
-    if (secondOperand === null) {
-        return;
-    };
+    if (secondOperand === null) return;
 
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
