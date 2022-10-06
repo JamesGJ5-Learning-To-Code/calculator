@@ -190,6 +190,11 @@ const displayDiv = document.querySelector('#display');
 
 const digitButtons = document.querySelectorAll('.digit');
 
+var countDecimals = function (value) {
+    if(Math.floor(value) === value) return 0;
+    return value.toString().split(".")[1].length || 0;
+    }
+
 digitButtons.forEach((button) => {
 
     button.addEventListener('click', (e) => {
@@ -207,11 +212,20 @@ digitButtons.forEach((button) => {
             secondOperand = 0;
         };
 
-        secondOperand *= 10;
-        secondOperand += digit;
-
         if (decimalButton.classList.contains('active')) {
-            secondOperand /= 10;
+            let numberOfDecimalDigits = countDecimals(secondOperand);
+            if (numberOfDecimalDigits > 10) return;
+
+            secondOperand *= 10 ** (1 + numberOfDecimalDigits);
+            secondOperand += digit;
+
+            // secondOperand should now be an integer, so round in case of decimal errors
+            secondOperand = Math.round(secondOperand);
+
+            secondOperand /= 10 ** (1 + numberOfDecimalDigits);
+        } else {
+            secondOperand *= 10;
+            secondOperand += digit;
         };
 
         displayDiv.textContent = secondOperand;
