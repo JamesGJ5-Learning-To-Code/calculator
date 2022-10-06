@@ -225,6 +225,10 @@ operatorButtons.forEach((button) => {
 
         decimalButton.classList.remove('active');
 
+        if (justPressedEquals === true) {
+            justPressedEquals = false;
+        };
+
         if (secondOperand === null) {
             return;
         };
