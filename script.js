@@ -234,6 +234,32 @@ decimalButton.addEventListener('click', (e) => {
 });
 
 
+// const backspaceButton = document.querySelector('#backspace');
+
+// backspaceButton.addEventListener('click', (e) => {
+
+//     if (secondOperand === null) {
+//         return;
+//     };
+
+//     let numberOfDecimalDigits = 0;
+//     while (secondOperand % 1 !== 0) {
+//         numberOfDecimalDigits += 1;
+//         secondOperand *= 10;
+//     };
+
+//     secondOperand = Math.floor(secondOperand / 10)
+
+//     if (secondOperand === 0) {
+//         secondOperand = null;
+//         displayDiv.textContent = '_';
+//     } else {
+//         displayDiv.textContent = secondOperand;
+//     };
+
+// });
+
+
 const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach((button) => {
