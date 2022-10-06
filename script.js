@@ -164,8 +164,6 @@ function divide(num1, num2) {
 // f) Make sure what's in the display is also augmented.
 
 
-let firstOperand = 0;
-let secondOperand = null;
 
 const displayDiv = document.querySelector('#display');
 
@@ -200,9 +198,8 @@ digitButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('#decimal');
 
-// This will be incremented in the event listener for digit clicks, and made 0 
-// again when an operator, equals or clear is pressed.
-let numberOfDecimalDigits = 0;
+reset()
+
 
 decimalButton.addEventListener('click', (e) => {
 
@@ -215,7 +212,6 @@ decimalButton.addEventListener('click', (e) => {
 });
 
 
-let queuedOperator = add;
 
 const operatorButtons = document.querySelectorAll('.operator');
 
@@ -265,8 +261,6 @@ operatorButtons.forEach((button) => {
 
 const equalsButton = document.querySelector('#equals');
 
-// Specifically, "just pressed equals while secondOperand not null"
-let justPressedEquals = false;
 
 equalsButton.addEventListener('click', (e) => {
 
@@ -294,7 +288,12 @@ function reset() {
     secondOperand = null;
     displayDiv.textContent = 0;
     queuedOperator = add;
+
+    // Specifically, "just pressed equals while secondOperand not null"
     justPressedEquals = false;
+
+    // This will be incremented in the event listener for digit clicks, and made 0 
+    // again when an operator, equals or clear is pressed.
     numberOfDecimalDigits = 0;
     decimalButton.classList.remove('active');
 
