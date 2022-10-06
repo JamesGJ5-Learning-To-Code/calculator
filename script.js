@@ -236,15 +236,6 @@ operatorButtons.forEach((button) => {
             return;
         };
 
-        // if (numberOfDecimalDigits > 0) {
-        //     secondOperand /= (10 ** numberOfDecimalDigits);
-
-        //     // numberOfDecimalDigits has taken effect on the number it is relevant 
-        //     // to in the operations, so can be reset for the next number that will 
-        //     // have decimal digits
-        //     numberOfDecimalDigits = 0;
-        // };
-
         // Clicking the operator button doesn't cause the clicked operator to take 
         // effect immediately, because the clicked operator would have to wait 
         // for the following number to be typed in. Instead, the queued operator 
@@ -292,7 +283,6 @@ equalsButton.addEventListener('click', (e) => {
 
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
-    // previousOperatorResult = queuedOperator(firstOperand, secondOperand / (10 ** numberOfDecimalDigits));
     previousOperatorResult = queuedOperator(firstOperand, secondOperand);
     displayDiv.textContent = previousOperatorResult;
 
@@ -311,9 +301,6 @@ function reset() {
     secondOperand = null;
     displayDiv.textContent = 0;
 
-    // // This will be incremented in the event listener for digit clicks, and made 0 
-    // // again when an operator, equals or clear is pressed.
-    // numberOfDecimalDigits = 0;
     decimalButton.classList.remove('active');
 
     // This is first because, when number is typed in and operator is clicked, 
