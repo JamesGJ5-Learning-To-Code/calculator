@@ -161,7 +161,9 @@ function divide(num1, num2) {
 // result of equals. Increase number of decimal places by 1 whenever a digit is 
 // added like this while active.
 
-// f) Make sure what's in the display is also augmented.
+// f) Make sure you have declared variables appropriately using let etc.
+
+// g) Make sure what's in the display is also augmented.
 
 
 
