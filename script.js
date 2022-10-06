@@ -295,6 +295,8 @@ equalsButton.addEventListener('click', (e) => {
     previousOperatorResult = queuedOperator(firstOperand, secondOperand / (10 ** numberOfDecimalDigits));
     displayDiv.textContent = previousOperatorResult;
 
+    // So that, when a number is next pressed in immediately afterwards, everything 
+    // is reset, so that the stored result and operations can be discontinued
     justPressedEquals = true;
 
 });
