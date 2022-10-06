@@ -165,6 +165,8 @@ function divide(num1, num2) {
 
 // g) Make sure you have declared variables appropriately using let etc.
 
+// h) Amend bug regarding changing mind about operator and this not being doable
+
 
 const displayDiv = document.querySelector('#display');
 
