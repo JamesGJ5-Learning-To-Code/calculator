@@ -153,7 +153,7 @@ function divide(num1, num2) {
 // d) DONE When you press an operator or equals sign or clear button, make it so that 
 // the decimal button becomes inactive.
 
-// e) If the decimal button is inactive and we click it, it is made active but we 
+// e) DONE If the decimal button is inactive and we click it, it is made active but we 
 // want to augment secondOperand first. Probably going to have to do this in the 
 // digit button click event listener. In there, if decimal button is active, 
 // want to multiply by 10 and add digit as normal, but later, want to divide 
