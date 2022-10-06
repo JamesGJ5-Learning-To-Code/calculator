@@ -180,6 +180,9 @@ digitButtons.forEach((button) => {
 
         digit = parseInt(button['id']);
 
+        // If secondOperand === null (when it is time to type in a new number), 
+        // have to make it 0 before digits can be "appended" to it by the process 
+        // below.
         if (secondOperand === null) {
             secondOperand = 0;
         };
