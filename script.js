@@ -165,7 +165,13 @@ function divide(num1, num2) {
 
 // g) DONE Make sure you have declared variables appropriately using let etc.
 
-// h) Amend bug regarding changing mind about operator and this not being doable
+// h) Amend bug regarding changing mind about operator and this not being doable. 
+// To do this, maybe make it so that, when an operator button has just been 
+// pressed, "justPressedOperator" is made true. Next, when you press an operator and 
+// this is true, all that should happen is that the click should replace 
+// queuedOperator with the new operator, and do this before the check for whether 
+// the secondOperand is null. When you type in a new digit or equals or trigger 
+// reset(), however, justPressedOperator should be made false if it is true.
 
 
 const displayDiv = document.querySelector('#display');
