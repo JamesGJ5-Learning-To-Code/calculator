@@ -256,6 +256,8 @@ operatorButtons.forEach((button) => {
         firstOperand = previousOperatorResult;
         secondOperand = null;
 
+        // Doing this instead of using eval(button['id']), for safety, because 
+        // executing JavaScript from a string is a security risk 
         switch (button['id']) {
             case "add":
                 queuedOperator = add;
