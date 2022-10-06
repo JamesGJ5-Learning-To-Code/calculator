@@ -213,23 +213,30 @@ digitButtons.forEach((button) => {
         };
 
         if (decimalButton.classList.contains('active')) {
-            let numberOfDecimalDigits = countDecimals(secondOperand);
-            if (numberOfDecimalDigits > 10) return;
 
-            secondOperand *= 10 ** (1 + numberOfDecimalDigits);
-            secondOperand += digit;
+            let string = displayDiv.textContent
+            console.log(string)
+            if (string.includes('.')) {
+                string += digit
+            } else {
+                string = string + '.' + digit
+            };
 
-            // secondOperand should now be an integer, so round in case of decimal errors
-            secondOperand = Math.round(secondOperand);
+            displayDiv.textContent = string;
 
-            secondOperand /= 10 ** (1 + numberOfDecimalDigits);
+            secondOperand = +string;
+
         } else {
+
             secondOperand *= 10;
             secondOperand += digit;
+
+            displayDiv.textContent = secondOperand;
+
         };
 
-        displayDiv.textContent = secondOperand;
     });
+    
 });
 
 
@@ -256,20 +263,23 @@ decimalButton.addEventListener('click', (e) => {
 //         return;
 //     };
 
-//     let numberOfDecimalDigits = 0;
-//     while (secondOperand % 1 !== 0) {
-//         numberOfDecimalDigits += 1;
-//         secondOperand *= 10;
+//     if (decimalButton.classList.contains('active')) {
+//         let numberOfDecimalDigits = countDecimals(secondOperand);
+//         if (numberOfDecimalDigits === 0) {
+//             decimalButton.classList.remove('active');
+//         } else {
+//             secondOperand * 10 ** (numberOfDecimalDigits - 1)
+//         };
 //     };
 
-//     secondOperand = Math.floor(secondOperand / 10)
+    // secondOperand = Math.floor(secondOperand / 10)
 
-//     if (secondOperand === 0) {
-//         secondOperand = null;
-//         displayDiv.textContent = '_';
-//     } else {
-//         displayDiv.textContent = secondOperand;
-//     };
+    // if (secondOperand === 0) {
+    //     secondOperand = null;
+    //     displayDiv.textContent = '_';
+    // } else {
+    //     displayDiv.textContent = secondOperand;
+    // };
 
 // });
 
