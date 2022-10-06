@@ -165,7 +165,7 @@ function divide(num1, num2) {
 
 // g) DONE Make sure you have declared variables appropriately using let etc.
 
-// h) Amend bug regarding changing mind about operator and this not being doable. 
+// h) DONE Amend bug regarding changing mind about operator and this not being doable. 
 // To do this, maybe make it so that, when an operator button has just been 
 // pressed, "justPressedOperator" is made true. Next, when you press an operator and 
 // this is true, all that should happen is that the click should replace 
@@ -186,6 +186,8 @@ digitButtons.forEach((button) => {
         if (justPressedEquals === true) {
             reset();
         };
+
+        justPressedOperator = false;
 
         let digit = parseInt(button['id']);
 
@@ -238,23 +240,29 @@ operatorButtons.forEach((button) => {
             justPressedEquals = false;
         };
 
-        // Don't want anything to happen if you haven't typed in a new number to 
-        // perform the queued operation on (because below the queued operator will 
-        // be implemented on firstOperand and secondOperand)
-        if (secondOperand === null) {
-            return;
+        if (justPressedOperator === false) {
+
+            // Don't want anything to perform a new computation if you haven't typed in a new number to 
+            // perform the queued operation on (because below the queued operator will 
+            // be implemented on firstOperand and secondOperand)
+            if (secondOperand === null) {
+                return;
+            };
+
+            // Clicking the operator button doesn't cause the clicked operator to take 
+            // effect immediately, because the clicked operator would have to wait 
+            // for the following number to be typed in. Instead, the queued operator 
+            // (the last one clicked) is implemented between the result so far and the 
+            // last number typed in
+            let previousOperatorResult = queuedOperator(firstOperand, secondOperand);
+            displayDiv.textContent = previousOperatorResult;
+
+            firstOperand = previousOperatorResult;
+            secondOperand = null;
+
+            justPressedOperator = true;
+
         };
-
-        // Clicking the operator button doesn't cause the clicked operator to take 
-        // effect immediately, because the clicked operator would have to wait 
-        // for the following number to be typed in. Instead, the queued operator 
-        // (the last one clicked) is implemented between the result so far and the 
-        // last number typed in
-        let previousOperatorResult = queuedOperator(firstOperand, secondOperand);
-        displayDiv.textContent = previousOperatorResult;
-
-        firstOperand = previousOperatorResult;
-        secondOperand = null;
 
         // Doing this instead of using eval(button['id']), for safety, because 
         // executing JavaScript from a string is a security risk 
@@ -282,6 +290,8 @@ const equalsButton = document.querySelector('#equals');
 equalsButton.addEventListener('click', (e) => {
 
     decimalButton.classList.remove('active');
+
+    justPressedEquals = false;
 
     // So that equals takes no effect if the last thing clicked was an operator 
     // (because it would try to perform the queuedOperator on a null value) 
@@ -316,6 +326,11 @@ function reset() {
     // queued operator will simply add this secondOperand to firstOperand (0), meaning 
     // the stored result will simply be the first number typed in
     queuedOperator = add;
+    
+    // Want to know this so that, if user clicks an operator and then click another 
+    // one (if user changes mind) they can do so without triggering another 
+    // computation in operator click listener
+    justPressedOperator = false;
 
     // Specifically, "just pressed equals while secondOperand not null"
     justPressedEquals = false;
@@ -328,5 +343,5 @@ clearButton.addEventListener('click', (e) => {
 
 });
 
-let firstOperand, secondOperand, queuedOperator, justPressedEquals;
+let firstOperand, secondOperand, queuedOperator, justPressedOperator, justPressedEquals;
 reset()
