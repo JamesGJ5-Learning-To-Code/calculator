@@ -181,7 +181,7 @@ digitButtons.forEach((button) => {
             reset();
         };
 
-        digit = parseInt(button['id']);
+        let digit = parseInt(button['id']);
 
         // If secondOperand === null (when it is time to type in a new number), 
         // have to make it 0 before digits can be "appended" to it by the process 
@@ -244,7 +244,7 @@ operatorButtons.forEach((button) => {
         // for the following number to be typed in. Instead, the queued operator 
         // (the last one clicked) is implemented between the result so far and the 
         // last number typed in
-        previousOperatorResult = queuedOperator(firstOperand, secondOperand);
+        let previousOperatorResult = queuedOperator(firstOperand, secondOperand);
         displayDiv.textContent = previousOperatorResult;
 
         firstOperand = previousOperatorResult;
@@ -286,7 +286,7 @@ equalsButton.addEventListener('click', (e) => {
 
     // TODO: refactor this code and the same code that appears in the 
     // operatorButtons event listener
-    previousOperatorResult = queuedOperator(firstOperand, secondOperand);
+    let previousOperatorResult = queuedOperator(firstOperand, secondOperand);
     displayDiv.textContent = previousOperatorResult;
 
     // So that, when a number is next pressed in immediately afterwards, everything 
@@ -322,5 +322,5 @@ clearButton.addEventListener('click', (e) => {
 
 });
 
-
+let firstOperand, secondOperand, queuedOperator, justPressedEquals;
 reset()
