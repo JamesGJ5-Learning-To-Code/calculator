@@ -185,6 +185,12 @@ function divide(num1, num2) {
 // only one digit, backspace should make it null and not let it show up on the display.
 
 
+// 7. Keyboard access
+
+// a) Going to give keyboard access to the digit buttons, the decimal button, the 
+// DEL button, the operator buttons and the equals button
+
+
 const displayDiv = document.querySelector('#display');
 
 
@@ -409,6 +415,16 @@ clearButton.addEventListener('click', (e) => {
     reset();
 
 });
+
+window.addEventListener('keydown', function(e) {
+
+    key = e.key;
+    button = document.querySelector(`button[data-key="${key}"]`);
+    if (!button) return;
+
+    button.click()
+
+})
 
 let firstOperand, secondOperand, queuedOperator, justPressedOperator, justPressedEquals;
 reset()
