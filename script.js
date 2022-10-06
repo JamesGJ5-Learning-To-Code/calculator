@@ -198,9 +198,6 @@ digitButtons.forEach((button) => {
 
 const decimalButton = document.querySelector('#decimal');
 
-reset()
-
-
 decimalButton.addEventListener('click', (e) => {
 
     if (decimalButton.classList.contains('active')) {
@@ -210,7 +207,6 @@ decimalButton.addEventListener('click', (e) => {
     decimalButton.classList.add('active');
 
 });
-
 
 
 const operatorButtons = document.querySelectorAll('.operator');
@@ -261,7 +257,6 @@ operatorButtons.forEach((button) => {
 
 const equalsButton = document.querySelector('#equals');
 
-
 equalsButton.addEventListener('click', (e) => {
 
     decimalButton.classList.remove('active');
@@ -305,3 +300,5 @@ clearButton.addEventListener('click', (e) => {
     reset();
 
 });
+
+reset()
