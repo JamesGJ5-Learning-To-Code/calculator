@@ -222,6 +222,9 @@ operatorButtons.forEach((button) => {
 
         decimalButton.classList.remove('active');
 
+        // If justPressedEquals is true and you leave it true, then the next time 
+        // you press a number after pressing this operator, everything is reset instead 
+        // of contributing the next number to previous operation/result
         if (justPressedEquals === true) {
             justPressedEquals = false;
         };
