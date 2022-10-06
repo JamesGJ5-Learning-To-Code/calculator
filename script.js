@@ -283,6 +283,9 @@ equalsButton.addEventListener('click', (e) => {
 
     decimalButton.classList.remove('active');
 
+    // So that equals takes no effect if the last thing clicked was an operator 
+    // (because it would try to perform the queuedOperator on a null value) 
+    // or if nothing has been typed in yet
     if (secondOperand === null) {
         return;
     };
