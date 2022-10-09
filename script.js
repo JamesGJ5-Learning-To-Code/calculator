@@ -26,6 +26,10 @@ var countDecimals = function (value) {
 
 digitButtons.forEach((button) => {
 
+    // TODO: append to string number than convert to real number in all cases
+    // TODO: use data-... to show whether something is active or not
+    // TODO: use "active" rather than justPressedEquals and justPressedOperator
+
     button.addEventListener('click', (e) => {
 
         if (justPressedEquals === true) {reset();};
