@@ -1,3 +1,15 @@
+
+const displayDiv = document.querySelector('#display');
+const digitButtons = document.querySelectorAll('.digit');
+const decimalButton = document.querySelector('#decimal');
+const backspaceButton = document.querySelector('#backspace');
+const operatorButtons = document.querySelectorAll('.operator');
+const equalsButton = document.querySelector('#equals');
+const clearButton = document.querySelector('#clear');
+
+let firstOperand, secondOperand, queuedOperator, justPressedOperator, justPressedEquals;
+reset()
+
 function add(num1, num2) {
     return num1 + num2;
 };
@@ -13,11 +25,6 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
     return multiply(num1, 1 / num2);
 };
-
-const displayDiv = document.querySelector('#display');
-
-
-const digitButtons = document.querySelectorAll('.digit');
 
 var countDecimals = function (value) {
     if(Math.floor(value) === value) return 0;
@@ -72,9 +79,6 @@ digitButtons.forEach((button) => {
 
 });
 
-
-const decimalButton = document.querySelector('#decimal');
-
 decimalButton.addEventListener('click', (e) => {
 
     // Don't want pressing decimalButton again to do anything until it is made 
@@ -86,9 +90,6 @@ decimalButton.addEventListener('click', (e) => {
     decimalButton.classList.add('active');
 
 });
-
-
-const backspaceButton = document.querySelector('#backspace');
 
 backspaceButton.addEventListener('click', (e) => {
 
@@ -129,9 +130,6 @@ backspaceButton.addEventListener('click', (e) => {
     };
 
 });
-
-
-const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach((button) => {
 
@@ -186,9 +184,6 @@ operatorButtons.forEach((button) => {
     });
 });
 
-
-const equalsButton = document.querySelector('#equals');
-
 equalsButton.addEventListener('click', (e) => {
 
     decimalButton.classList.remove('active');
@@ -210,9 +205,6 @@ equalsButton.addEventListener('click', (e) => {
     justPressedEquals = true;
 
 });
-
-
-const clearButton = document.querySelector('#clear');
 
 function reset() {
 
@@ -243,7 +235,6 @@ clearButton.addEventListener('click', (e) => {
 
 });
 
-
 window.addEventListener('keydown', function(e) {
 
     key = e.key;
@@ -253,7 +244,3 @@ window.addEventListener('keydown', function(e) {
     button.click()
 
 })
-
-
-let firstOperand, secondOperand, queuedOperator, justPressedOperator, justPressedEquals;
-reset()
