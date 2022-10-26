@@ -1,3 +1,4 @@
+// TODO: add functionality for big numbers and decimal multiplication
 
 const displayDiv = document.querySelector('#display');
 const digitButtons = document.querySelectorAll('.digit');
@@ -28,7 +29,6 @@ function divide(num1, num2) {
 
 digitButtons.forEach((button) => {
 
-    // TODO: append to string number than convert to real number in all cases
     // TODO: use data-... to show whether something is active or not
     // TODO: use "active" rather than justPressedEquals and justPressedOperator
 
