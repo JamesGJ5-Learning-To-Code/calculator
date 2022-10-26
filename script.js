@@ -87,7 +87,7 @@ decimalButton.addEventListener('click', (e) => {
     decimalButton.classList.add('active');
     let string = displayDiv.textContent;
 
-    if (string == '_') {
+    if (string == '_' || justPressedEquals || justPressedOperator) {
         string = '.';
         
     } else {
