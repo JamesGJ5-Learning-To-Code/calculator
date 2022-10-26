@@ -50,7 +50,6 @@ digitButtons.forEach((button) => {
         if (decimalButton.classList.contains('active')) {
 
             let string = displayDiv.textContent
-            console.log(string)
             
             string += digit;
 
