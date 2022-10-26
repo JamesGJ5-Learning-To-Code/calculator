@@ -26,11 +26,6 @@ function divide(num1, num2) {
     return multiply(num1, 1 / num2);
 };
 
-var countDecimals = function (value) {
-    if(Math.floor(value) === value) return 0;
-    return value.toString().split(".")[1].length || 0;
-    }
-
 digitButtons.forEach((button) => {
 
     // TODO: append to string number than convert to real number in all cases
