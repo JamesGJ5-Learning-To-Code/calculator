@@ -84,6 +84,8 @@ decimalButton.addEventListener('click', (e) => {
         return;
     };
 
+    if (justPressedEquals === true) {reset();};
+
     decimalButton.classList.add('active');
     let string = displayDiv.textContent;
 
