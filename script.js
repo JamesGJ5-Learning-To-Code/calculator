@@ -49,7 +49,7 @@ digitButtons.forEach((button) => {
 
         if (decimalButton.classList.contains('active')) {
 
-            let string = displayDiv.textContent
+            let string = displayDiv.textContent;
             
             string += digit;
 
@@ -78,7 +78,7 @@ decimalButton.addEventListener('click', (e) => {
         return;
     };
 
-    if (justPressedEquals === true) {reset();};
+    if (justPressedEquals === true) {reset()};
 
     decimalButton.classList.add('active');
     let string = displayDiv.textContent;
@@ -100,17 +100,17 @@ backspaceButton.addEventListener('click', (e) => {
         let string = displayDiv.textContent;
 
         if (string.charAt(string.length - 1) === '.') {
-            decimalButton.classList.remove('active')
-        }
+            decimalButton.classList.remove('active');
+        };
 
         string = string.slice(0, -1);
 
         if (string === '') {
-            displayDiv.textContent = '_'
+            displayDiv.textContent = '_';
 
         } else {
             displayDiv.textContent = string;
-        }
+        };
         
         secondOperand = +string;
 
@@ -243,6 +243,6 @@ window.addEventListener('keydown', function(e) {
     button = document.querySelector(`button[data-key="${key}"]`);
     if (!button) return;
 
-    button.click()
+    button.click();
 
-})
+});
