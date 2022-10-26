@@ -101,10 +101,6 @@ decimalButton.addEventListener('click', (e) => {
 
 backspaceButton.addEventListener('click', (e) => {
 
-    if (secondOperand === null) {
-        return;
-    };
-
     if (decimalButton.classList.contains('active')) {
 
         let string = displayDiv.textContent;
@@ -114,11 +110,21 @@ backspaceButton.addEventListener('click', (e) => {
         }
 
         string = string.slice(0, -1);
-        displayDiv.textContent = string;
 
+        if (string === '') {
+            displayDiv.textContent = '_'
+
+        } else {
+            displayDiv.textContent = string;
+        }
+        
         secondOperand = +string;
 
     } else {
+
+        if (secondOperand === null) {
+            return;
+        };
 
         secondOperand = Math.floor(secondOperand / 10);
 
