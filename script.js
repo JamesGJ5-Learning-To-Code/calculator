@@ -56,11 +56,8 @@ digitButtons.forEach((button) => {
 
             let string = displayDiv.textContent
             console.log(string)
-            if (string.includes('.')) {
-                string += digit
-            } else {
-                string = string + '.' + digit
-            };
+            
+            string += digit;
 
             displayDiv.textContent = string;
 
@@ -88,7 +85,9 @@ decimalButton.addEventListener('click', (e) => {
     };
 
     decimalButton.classList.add('active');
-
+    let string = displayDiv.textContent;
+    string += '.';
+    displayDiv.textContent = string;
 });
 
 backspaceButton.addEventListener('click', (e) => {
@@ -101,17 +100,11 @@ backspaceButton.addEventListener('click', (e) => {
 
         let string = displayDiv.textContent;
 
-        if (!string.includes('.')) {
-            decimalButton.classList.remove('active');
-
-        } else if (string.charAt(string.length - 1) === '.') {
-            string = string.slice(0, -1);
+        if (string.charAt(string.length - 1) === '.') {
             decimalButton.classList.remove('active')
+        }
 
-        } else {
-            string = string.slice(0, -1);
-        };
-
+        string = string.slice(0, -1);
         displayDiv.textContent = string;
 
         secondOperand = +string;
