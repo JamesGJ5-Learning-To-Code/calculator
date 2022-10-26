@@ -1,4 +1,7 @@
-.operator, 
-#equals {
+.operator {
     background-color: lightblue;
+}
+
+#equals {
+    background-color: lightgreen;
 }
