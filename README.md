@@ -1,2 +1,1 @@
-# calculator
-Made at the behest of The Odin Project's Foundations course
+Really basic calculator made to practice using JavaScript functions for DOM manipulation for the first time. Not coded cleanly.
